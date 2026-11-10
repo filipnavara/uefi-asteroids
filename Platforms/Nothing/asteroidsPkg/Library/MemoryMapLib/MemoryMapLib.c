@@ -54,7 +54,7 @@ gMemoryDescriptor[] = {
   // GPU_Pool at the top any more; the Adreno BOs come from XNU's own memory (sheng's Adreno740 882f4bf), so the whole bank is
   // conventional and the window can grow over what the pool held.
   {"RAM_Partition_Hi0",  0x8C0000000, 0x0C0000000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv, WRITE_BACK_XN},
-  {"RAM_Partition_Hi1",  0x980000000, 0x17FE00000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv, WRITE_BACK_XN},
+  {"RAM_Partition_Hi1",  0x980000000, 0x07FE00000, /* 8 GB unit: DRAM ends at 0xA00000000 (12 GB: 0x17FE00000) */ AddMem, SYS_MEM, SYS_MEM_CAP, Conv, WRITE_BACK_XN},
 
   // Register Regions
   {"IPC_ROUTER_TOP",     0x00400000, 0x00100000, AddDev, MMAP_IO, UNCACHEABLE, MmIO, NS_DEVICE},
